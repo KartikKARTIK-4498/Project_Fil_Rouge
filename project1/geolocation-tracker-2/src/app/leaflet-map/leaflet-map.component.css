@@ -1,0 +1,17 @@
+#map {
+    height: 450px;
+    width: 95%;
+    margin: 2rem;
+    margin-top: -1rem;
+    border: 3px solid rgba(236, 24, 57, 1);;
+    border-radius: 20px;
+  }
+  @media (max-width: 500px) {
+
+    #map{
+      margin: 1rem;
+      margin-top: -1rem;
+
+    }
+    
+    }

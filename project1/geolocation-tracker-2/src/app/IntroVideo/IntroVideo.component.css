@@ -1,0 +1,8 @@
+#fullscreen-video {
+    width: 100vw; /* 100% of the viewport width */
+    height: 100vh; /* 100% of the viewport height */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  

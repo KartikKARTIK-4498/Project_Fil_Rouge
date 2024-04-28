@@ -1,0 +1,59 @@
+
+<div class="home-content-main">
+  <div id="home-header-check">
+   <div id="head-1">
+     <img src="../../assets/login.png" alt="" id="img-login">
+     <h4>FIL ROUGE</h4>
+   </div>
+   <div id="head-2">
+    <button (click)="redirectToHome()">HOME</button>
+    <button (click)="redirectToDashboard()">VIEW HISTORY</button>
+     <div class="dropdown" >
+     <img src="../../assets/user.png" alt="" id="img-login" >
+     <div class="dropdown-content">
+       <a href="/dashboard">History</a>
+       <a (click)="logout()">Logout</a>
+      </div>
+   </div>
+   </div>
+  </div>
+ 
+ 
+ 
+  <div class="dashboard-table" >
+    <h2 style="text-align: center;">User-History of Geolocation</h2>
+
+    <!-- Geolocation Table -->
+    <table class="geolocation-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Region</th>
+          <th>Country</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Local Date </th>
+          <th>Local time </th>
+        </tr>
+      </thead>
+      <tbody>
+  
+        <tr  *ngFor="let location of locationData">
+          <td>{{ location.name }}</td>
+          <td>{{ location.region }}</td>
+          <td>{{ location.country }}</td>
+          <td>{{ location.lat }}</td>
+          <td>{{ location.lon }}</td>
+          <td>{{ location.localtime | date:'yyyy-MM-dd ' }}</td>
+          <td>{{ location.localtime | date:'HH:mm:ss' }}</td>
+        </tr>
+      
+      </tbody>
+    </table>
+  </div>
+
+
+
+ 
+ </div> 
+  

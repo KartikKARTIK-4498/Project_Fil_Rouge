@@ -1,0 +1,59 @@
+
+<div class="home-content-main">
+ <div id="home-header-check">
+  <div id="head-1">
+    <img src="../../assets/login.png" alt="" id="img-login">
+    <h4>FIL ROUGE</h4>
+  </div>
+  <div id="head-2">
+    <button (click)="redirectToHome()">HOME</button>
+    <button (click)="redirectToDashboard()">VIEW HISTORY</button>
+    <div class="dropdown" >
+    <img src="../../assets/user.png" alt="" id="img-login" >
+    <div class="dropdown-content">
+      <a href="/dashboard">History</a>
+      <a (click)="logout()">Logout</a>
+    </div>
+  </div>
+  </div>
+ </div>
+
+
+
+ <div class="div-set-map">
+        <form class="form-style" (ngSubmit)="search()">
+      
+  <input
+          [(ngModel)]="searchTerm"
+          id="search-input"
+          required
+          name="searchTerm"
+          placeholder="Enter country or city name"
+        />
+        <button type="submit"><i id="btn" class="ri-search-line"></i></button>
+      </form>
+</div>
+ <app-leaflet-map
+ [searchTerm]="searchTerm"
+(updateMapData)="handleUpdateMapData($event)"
+(updateCurrentLocData)="handleCurrentLocData($event)"
+ ></app-leaflet-map>
+ <div id="body-2ex">
+  <div>
+    <h3>Current Location Details</h3>
+    <p><span>Temperature</span> {{ currentLoc?.current?.temp_c ? currentLoc.current.temp_c + ' °C' : 'N/A'}}</p>
+    <p><span>Location</span> {{ currentLoc?.location?.name ? currentLoc.location.name + ', ' + currentLoc.location.region + ', ' + currentLoc.location.country : 'N/A'}}</p>
+    <p><span>Local Time</span> {{ currentLoc?.location?.localtime ? currentLoc.location.localtime : 'N/A'}}</p>
+    <p><span>Wheather</span> {{ currentLoc?.current?.condition?.text ? currentLoc.current.condition.text : 'N/A'}}</p>
+  </div>
+  <div>
+    <h3>Searched Location Details</h3>
+    <p><span>Temperature</span>: {{ searchedLocation?.weatherData?.current?.temp_c  ? searchedLocation?.weatherData.current.temp_c + ' °C' : 'N/A' }}</p>
+    <p><span>Location</span>: {{ searchedLocation?.weatherData?.location?.name ? searchedLocation.weatherData.location.name + ', ' + searchedLocation.weatherData.location.region + ', ' + searchedLocation.weatherData.location.country : 'N/A' }}</p>
+    <p><span>Local Time</span>: {{ searchedLocation?.weatherData?.current?.last_updated  ? searchedLocation?.weatherData.current.last_updated : 'N/A' }}</p>
+    <p><span>Weather</span>: {{ searchedLocation?.weatherData?.current?.condition?.text  ? searchedLocation?.weatherData.current.condition.text : 'N/A' }}</p>
+</div>
+
+</div>
+
+</div> 
