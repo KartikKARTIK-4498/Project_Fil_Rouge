@@ -3,30 +3,14 @@
   "name": "your-project-name",
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "distDir": "dist"
+      "src": "*.js",
+      "use": "@vercel/node"
       }
-    }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1.js"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/dist/$1"
+      "dest": "/"
     }
-  ],
-  "env": {
-    "API_SECRET": "@api_secret"
-  },
-  "build": {
-    "env": {
-      "API_SECRET": "@api_secret"
-    }
-  },
-  "regions": ["all"]
-}
+  ]
+} 
