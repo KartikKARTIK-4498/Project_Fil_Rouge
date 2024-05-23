@@ -33,7 +33,3 @@ Thumbs.db
 # Debug log
 debug.log
 
-# Compiled files
-*.js.map
-*.js
-*.d.ts
