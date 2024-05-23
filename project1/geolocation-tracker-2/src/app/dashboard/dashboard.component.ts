@@ -26,6 +26,7 @@ export class DashboardComponent {
         if (response.weather && response.weather.length > 0) {
           // Extract and store location data
           this.locationData = response.weather.map((entry:any) => entry.location);
+          this.locationData = this.locationData.reverse();
           // console.log('Location Data:', this.locationData);
         } else {
           console.log('No weather data found');

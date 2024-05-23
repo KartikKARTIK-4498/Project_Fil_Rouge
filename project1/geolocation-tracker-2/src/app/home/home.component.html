@@ -3,17 +3,22 @@
  <div id="home-header-check">
   <div id="head-1">
     <img src="../../assets/login.png" alt="" id="img-login">
-    <h4>FIL ROUGE</h4>
+    <!-- <h4>FIL ROUGE</h4> -->
+
+
   </div>
   <div id="head-2">
     <button (click)="redirectToHome()">HOME</button>
-    <button (click)="redirectToDashboard()">VIEW HISTORY</button>
+    <button (click)="redirectToDashboard()">Voir l'historique</button>
+    <app-dark-mode-toggle style="margin-left: 10px;"></app-dark-mode-toggle>
+
     <div class="dropdown" >
     <img src="../../assets/user.png" alt="" id="img-login" >
     <div class="dropdown-content">
       <a href="/dashboard">History</a>
       <a (click)="logout()">Logout</a>
     </div>
+
   </div>
   </div>
  </div>
@@ -40,7 +45,7 @@
  ></app-leaflet-map>
  <div id="body-2ex">
   <div>
-    <h3>Current Location Details</h3>
+    <h3>Détails de l'emplacement actuel</h3>
     <p><span>Temperature</span> {{ currentLoc?.current?.temp_c ? currentLoc.current.temp_c + ' °C' : 'N/A'}}</p>
     <p><span>Location</span> {{ currentLoc?.location?.name ? currentLoc.location.name + ', ' + currentLoc.location.region + ', ' + currentLoc.location.country : 'N/A'}}</p>
     <p><span>Local Time</span> {{ currentLoc?.location?.localtime ? currentLoc.location.localtime : 'N/A'}}</p>

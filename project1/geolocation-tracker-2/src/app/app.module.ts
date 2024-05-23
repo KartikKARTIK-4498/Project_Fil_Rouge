@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LeafletMapComponent } from './leaflet-map/leaflet-map.component';
 import { TermsAndConditionComponent } from './terms-and-condition/terms-and-condition.component';
+import { DarkModeToggle } from './dark/dark-mode-toggle.component';
+import { DARK_MODE_OPTIONS } from 'angular-dark-mode';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { TermsAndConditionComponent } from './terms-and-condition/terms-and-cond
     DashboardComponent,
     MapComponent,
     LeafletMapComponent,
-    TermsAndConditionComponent
+    TermsAndConditionComponent,
+    DarkModeToggle
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,14 @@ import { TermsAndConditionComponent } from './terms-and-condition/terms-and-cond
     HttpClientModule,
   ],
   providers: [
-    HomeService
+    HomeService,
+  //   {
+  //     provide: DARK_MODE_OPTIONS,
+  //     useValue: {
+  //         darkModeClass: 'my-dark-mode',
+  //         lightModeClass: 'my-light-mode'
+  //     }
+  // }
   ],
   bootstrap: [AppComponent]
 })

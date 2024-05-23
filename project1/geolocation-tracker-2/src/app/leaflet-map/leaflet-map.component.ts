@@ -101,6 +101,7 @@ export class LeafletMapComponent implements AfterViewInit, OnDestroy {
       .then(response => response.json())
       .then(data => {
         console.log("savedLocationDetails-", data);
+        this.updateMap([lat, long], data);
         this.updateCurrentLocData.emit(data);
       })
       .catch(error => {
